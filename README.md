@@ -15,7 +15,7 @@ by [Graham Campbell](https://github.com/GrahamCampbell/).
 
 ## Installation
 
-WHMCS API for Laravel requires PHP ^7.4 | ^8.0 with at least Laravel 8.
+WHMCS API for Laravel requires PHP ^8.1 with at least Laravel 10.
 
 Install the package through [Composer](http://getcomposer.org/). Run the Composer require command from the Terminal:
 

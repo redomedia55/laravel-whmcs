@@ -36,7 +36,7 @@ class WhmcsFactoryTest extends AbstractTestCase
         );
     }
 
-    public function testMakeConnectionWithMethod()
+    public function testMakeConnectionWithMethod(): void
     {
         $client = $this->factory->make([
             'method' => 'token',
@@ -49,7 +49,7 @@ class WhmcsFactoryTest extends AbstractTestCase
         $this->assertInstanceOf(HttpMethodsClientInterface::class, $client->getHttpClient());
     }
 
-    public function testWithoutMethod()
+    public function testWithoutMethod(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('The whmcs factory requires an auth method');
@@ -57,7 +57,7 @@ class WhmcsFactoryTest extends AbstractTestCase
         $this->factory->make([]);
     }
 
-    public function testInvalidMethod()
+    public function testInvalidMethod(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Unsupported authentication method');

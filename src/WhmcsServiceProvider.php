@@ -72,9 +72,7 @@ class WhmcsServiceProvider extends ServiceProvider
      */
     protected function registerAuthFactory(): void
     {
-        $this->app->singleton('whmcs.authfactory', function () {
-            return new AuthFactory();
-        });
+        $this->app->singleton('whmcs.authfactory', fn() => new AuthFactory());
 
         $this->app->alias('whmcs.authfactory', AuthFactory::class);
     }

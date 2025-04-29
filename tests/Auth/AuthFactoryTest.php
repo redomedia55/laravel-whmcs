@@ -21,21 +21,21 @@ class AuthFactoryTest extends TestCase
         $this->factory = new AuthFactory();
     }
 
-    public function testMakePasswordAuth()
+    public function testMakePasswordAuth(): void
     {
         $method = $this->factory->make('password');
 
         $this->assertInstanceOf(PasswordAuth::class, $method);
     }
 
-    public function testMakeTokenAuth()
+    public function testMakeTokenAuth(): void
     {
         $method = $this->factory->make('token');
 
         $this->assertInstanceOf(TokenAuth::class, $method);
     }
 
-    public function testMakeInvalidAuth()
+    public function testMakeInvalidAuth(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('Unsupported authentication method [fail].');

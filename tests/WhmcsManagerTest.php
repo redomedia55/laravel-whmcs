@@ -12,7 +12,7 @@ use Mockery;
 
 class WhmcsManagerTest extends AbstractTestCase
 {
-    public function testCreateConnection()
+    public function testCreateConnection(): void
     {
         $configRepository = Mockery::mock(Repository::class);
         $factory = Mockery::mock(WhmcsFactory::class);

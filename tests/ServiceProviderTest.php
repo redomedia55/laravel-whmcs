@@ -12,35 +12,35 @@ use DarthSoup\WhmcsApi\Client;
 
 class ServiceProviderTest extends AbstractTestCase
 {
-    public function testHttpClientFactoryIsInjectable()
+    public function testHttpClientFactoryIsInjectable(): void
     {
         $instance = $this->app->make('whmcs.httpclientfactory');
 
         $this->assertInstanceOf(HttpClientBuilderFactory::class, $instance);
     }
 
-    public function testAuthFactory()
+    public function testAuthFactory(): void
     {
         $instance = $this->app->make('whmcs.authfactory');
 
         $this->assertInstanceOf(AuthFactory::class, $instance);
     }
 
-    public function testWhmcsFactory()
+    public function testWhmcsFactory(): void
     {
         $instance = $this->app->make('whmcs.factory');
 
         $this->assertInstanceOf(WhmcsFactory::class, $instance);
     }
 
-    public function testManager()
+    public function testManager(): void
     {
         $instance = $this->app->make('whmcs');
 
         $this->assertInstanceOf(WhmcsManager::class, $instance);
     }
 
-    public function testBindings()
+    public function testBindings(): void
     {
         $instance = $this->app->make('whmcs.connection');
 

@@ -21,7 +21,7 @@ class PasswordAuthTest extends TestCase
         $this->auth = new PasswordAuth();
     }
 
-    public function testMakeWithMethod()
+    public function testMakeWithMethod(): void
     {
         $client = Mockery::mock(Client::class);
         $client->shouldReceive('authenticate')
@@ -37,7 +37,7 @@ class PasswordAuthTest extends TestCase
         $this->assertInstanceOf(Client::class, $auth);
     }
 
-    public function testWithoutUsername()
+    public function testWithoutUsername(): void
     {
         $client = Mockery::mock(Client::class);
 
@@ -47,7 +47,7 @@ class PasswordAuthTest extends TestCase
         $this->auth->with($client)->authenticate([]);
     }
 
-    public function testWithoutPassword()
+    public function testWithoutPassword(): void
     {
         $client = Mockery::mock(Client::class);
 
@@ -57,7 +57,7 @@ class PasswordAuthTest extends TestCase
         $this->auth->with($client)->authenticate(['username' => 'foo']);
     }
 
-    public function testMakeWithoutSettingClient()
+    public function testMakeWithoutSettingClient(): void
     {
         $this->expectException(InvalidArgumentException::class);
         $this->expectExceptionMessage('The client instance was not given to the auth process.');
@@ -67,5 +67,4 @@ class PasswordAuthTest extends TestCase
             'password' => 'bar',
         ]);
     }
-
 }
