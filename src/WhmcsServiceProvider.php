@@ -57,6 +57,9 @@ class WhmcsServiceProvider extends ServiceProvider
                 new GuzzleClient([
                     'connect_timeout' => $app['config']->get('whmcs.connect_timeout', 10),
                     'timeout' => $app['config']->get('whmcs.timeout', 30),
+                    'verify' => $app['config']->get('whmcs.guzzle_ssl_verify', true),
+
+                                 
                 ]),
                 $psrFactory,
                 $psrFactory,
